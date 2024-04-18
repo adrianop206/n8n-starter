@@ -1,19 +1,19 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-whatsappmessageode",
   "version": "0.1.0",
-  "description": "",
+  "description": "Gerenciamento de fluxos de chatbot para Talkbee",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Adriano",
+    "email": "email@example.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/adrianop206/n8n-starter"
   },
   "main": "index.js",
   "scripts": {
@@ -32,10 +32,12 @@
     "credentials": [
       "dist/credentials/ExampleCredentialsApi.credentials.js",
       "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/WhatsAppApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/ExampleNode/ExampleNode.node.js",
       "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/WhatsappMessageNode/WhatsappMessageNode.node.js"
     ]
   },
   "devDependencies": {
