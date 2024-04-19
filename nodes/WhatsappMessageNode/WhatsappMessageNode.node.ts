@@ -4,6 +4,8 @@ import {
     INodeType,
     INodeTypeDescription,
     NodeOperationError,
+    IRequestOptions,
+    IHttpRequestMethods
 } from 'n8n-workflow';
 
 export class WhatsAppMessageNode implements INodeType {
@@ -52,7 +54,6 @@ export class WhatsAppMessageNode implements INodeType {
             const phoneNumber = this.getNodeParameter('phoneNumber', itemIndex) as string;
             const message = this.getNodeParameter('message', itemIndex) as string;
             const credentials = await this.getCredentials('whatsAppApiCredential');
-					
 
             if (!credentials) {
                 throw new NodeOperationError(this.getNode(), 'No credentials were returned!');
@@ -60,8 +61,8 @@ export class WhatsAppMessageNode implements INodeType {
 
             const apiToken = credentials.apiToken as string;
 
-            const options = {
-                method: 'POST',
+            const options: IRequestOptions = {
+                method: 'POST' as IHttpRequestMethods,
                 headers: {
                     'Content-Type': 'application/json',
                     'Token': apiToken
