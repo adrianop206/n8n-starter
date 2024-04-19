@@ -52,6 +52,7 @@ export class WhatsAppMessageNode implements INodeType {
             const phoneNumber = this.getNodeParameter('phoneNumber', itemIndex) as string;
             const message = this.getNodeParameter('message', itemIndex) as string;
             const credentials = this.getCredentials('whatsAppApiCredential');
+					
 
             if (credentials === undefined) {
                 throw new NodeOperationError(this.getNode(), 'No credentials were returned!');
